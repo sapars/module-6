@@ -41,7 +41,10 @@ class Vehicle:
         print('_________________')
 
     def set_color(self, color: str='red'):
-        self.__color = color
+        if color.lower() in Vehicle.__COLOR_VARIANTS:
+            self.__color = color
+        else:
+            print(f'Невозможно покрасить в {color}')
 
 
 
